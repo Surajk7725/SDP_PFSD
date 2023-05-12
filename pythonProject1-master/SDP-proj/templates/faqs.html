@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FAQs - Rent Us!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .faq {
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .faq h2 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .faq p {
+            margin-bottom: 10px;
+        }
+
+        .faq .question {
+            color: #555;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .faq .answer {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .faq .answer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq .answer.show {
+            display: block;
+        }
+
+        .faq .answer.show p:first-child {
+            margin-top: 0;
+        }
+
+        .goback-button {
+        display: block;
+        width: 200px;
+        height: 60px;
+        background-color: #FFC107;
+        color: #FFF;
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: 20px auto;
+        text-align: center;
+        line-height: 60px;
+        text-decoration: none;
+    }
+
+    .goback-button:hover {
+        background-color: #FFA000;
+    }
+    </style>
+</head>
+<body>
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="faq">
+        <h2>Question 1</h2>
+        <div class="question">What types of vehicles do you offer for rent?</div>
+        <div class="answer">
+            <h2>Answer</h2>
+            <p>We offer a wide range of vehicles including cars,bikes and buses. You can choose the one that suits your needs and preferences.</p>
+        </div>
+    </div>
+
+    <div class="faq">
+        <h2>Question 2</h2>
+        <div class="question">What are the rental requirements?</div>
+        <div class="answer">
+            <h2>Answer</h2>
+            <p>To rent a vehicle, you need to be at least 18 years old and have a valid driver's license. You will also be required to provide a valid ID and a credit card for the rental deposit.</p>
+        </div>
+    </div>
+
+    <div class="faq">
+        <h2>Question 3</h2>
+        <div class="question">How can I make a reservation?</div>
+        <div class="answer">
+            <h2>Answer</h2>
+            <p>You can make a reservation online through our website or by calling our customer service. Simply select the desired dates, location, and vehicle type, and follow the instructions to complete the reservation.</p>
+        </div>
+    </div>
+    <a href="/home">
+    <button class="goback-button">Go Back</button>
+</a>
+
+    <!-- Add more FAQs as needed -->
+
+    <script>
+        // JavaScript code to toggle the visibility of the answer
+        var questions = document.getElementsByClassName("question");
+
+        for (var i = 0; i < questions.length; i++) {
+            questions[i].addEventListener("click", function () {
+                var answer = this.nextElementSibling;
+                answer.classList.toggle("show");
+            });
+        }
+    </script>
+</body>
+</html>

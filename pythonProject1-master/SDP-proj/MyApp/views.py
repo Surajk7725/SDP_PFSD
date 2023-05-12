@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.core.mail import send_mail
 from django.contrib.auth import authenticate, login, logout
-from .models import Car, Order, Contact,Bike,Bus,OrderBike,OrderBus
+from django.contrib.auth.models import User
+from django.core.mail import send_mail
+
+from .models import Car, Contact, Bike, Bus, OrderBike, OrderBus ,Order
 
 
 def initial(request):
@@ -13,6 +14,8 @@ def initial(request):
 def index(request):
     return render(request, 'index.html')
 
+def faqs(request):
+    return render(request, 'faqs.html')
 
 def about(request):
     return render(request, 'about.html ')
@@ -111,10 +114,6 @@ def bill2(request):
     params = {'buses': buses}
     return render(request, 'bill2.html', params)
 
-
-from django.shortcuts import render, redirect
-from .models import Order
-
 def order(request):
     if request.method == "POST":
         billname = request.POST.get('billname', '')
@@ -145,7 +144,7 @@ def order(request):
         order = Order(name=billname, email=billemail, phone=billphone, address=billaddress, city=billcity, cars=cars11,
                       days_for_rent=dayss, date=date, loc_from=fl, loc_to=tl,aadhar_card=aadhar_card, driving_license=driving_license, passport_photo=passport_photo)
         order.save()
-        return redirect('home')
+        return redirect('payment')
     else:
         print("error")
         return render(request, 'bill.html')
@@ -181,7 +180,7 @@ def order1(request):
         order = OrderBike(name=billname, email=billemail, phone=billphone, address=billaddress, city=billcity, bike=bikes11,
                       days_for_rent=dayss, date=date, loc_from=fl, loc_to=tl,aadhar_card=aadhar_card, driving_license=driving_license, passport_photo=passport_photo)
         order.save()
-        return redirect('home')
+        return redirect('payment')
     else:
         print("error")
         return render(request, 'bill1.html')
@@ -216,11 +215,13 @@ def order2(request):
         order = OrderBus(name=billname, email=billemail, phone=billphone, address=billaddress, city=billcity, bus=buses11,
                       days_for_rent=dayss, date=date, loc_from=fl, loc_to=tl,aadhar_card=aadhar_card, driving_license=driving_license, passport_photo=passport_photo)
         order.save()
-        return redirect('home')
+        return redirect('payment')
     else:
         print("error")
         return render(request, 'bill2.html')
 
+
+from django.shortcuts import render, redirect
 
 def contact(request):
     if request.method == "POST":
@@ -238,6 +239,21 @@ def contact(request):
             [contactemail],
             fail_silently=False,
         )
-    return render(request, 'contact.html ')
+        # Redirect to contact details page with the current date
+        return redirect('home')
+
+    return render(request, 'contact.html')
+
+
+def handle(request):
+    contacts = Contact.objects.filter()
+    return render(request, 'handle.html', {'contacts': contacts})
+
+def payment(request):
+    value=2500
+    messages.success(request, 'Payment successful!')
+    return render(request, "payment.html", {"value": value})
+
+
 
 

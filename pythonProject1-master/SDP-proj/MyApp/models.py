@@ -12,9 +12,6 @@ class Car(models.Model):
     def __str__(self):
         return self.car_name
 
-
-from django.db import models
-
 class Order(models.Model):
     order_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=90, default="")
@@ -42,7 +39,6 @@ class Contact(models.Model):
     email = models.CharField(max_length=150, default="")
     phone_number = models.CharField(max_length=15, default="")
     message = models.TextField(max_length=500, default="")
-
     def __str__(self):
         return self.name
 

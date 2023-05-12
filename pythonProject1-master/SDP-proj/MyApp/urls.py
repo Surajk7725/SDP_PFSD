@@ -16,5 +16,7 @@ urlpatterns = [
     path("bill1",views.order1,name = "bill1"),
     path("bill2",views.order2,name = "bill2"),
     path("contact",views.contact,name = 'contact'),
-
+    path("handle",views.handle,name = 'handle'),
+    path("payment", views.payment, name="payment"),
+    path("faqs", views.faqs, name="faqs"),
     ]
