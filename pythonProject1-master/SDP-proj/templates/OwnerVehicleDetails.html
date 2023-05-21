@@ -1,0 +1,114 @@
+{% extends 'base1.html' %}
+{% block body %}
+<head>
+  <title>Vehicle Information</title>
+  <style>
+    .card {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .card img {
+      width: 200px;
+      height: auto;
+      margin-right: 20px;
+    }
+
+    .card-info {
+      flex-grow: 1;
+      padding-right: 20px;
+    }
+
+    .upload-button {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .upload-button input[type="file"] {
+      display: none;
+    }
+
+    .upload-button label {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    .home-button {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .home-button a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200" alt="Car Image">
+    <div class="card-info">
+      <h2>Car</h2>
+      <p>Make a pdf which should take a picture of all your cars and describe it by giving details.</p>
+    </div>
+    <div class="upload-button">
+      <label for="car-pdf-upload">Upload PDF</label>
+      <input type="file" id="car-pdf-upload" accept=".pdf">
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://img.etimg.com/thumb/msid-75572296,width-640,resizemode-4,imgsize-507941/bmw-ninet.jpg" alt="Bike Image">
+    <div class="card-info">
+      <h2>Bike</h2>
+      <p>Make a pdf which should take a picture of all your bikes and describe it by giving details.</p>
+    </div>
+    <div class="upload-button">
+      <label for="bike-pdf-upload">Upload PDF</label>
+      <input type="file" id="bike-pdf-upload" accept=".pdf">
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/BS%20VI%20Bus%20Single%20Axcel_Single%20Bus?wid=1400&fit=constrain" alt="Bus Image">
+    <div class="card-info">
+      <h2>Bus</h2>
+      <p>Make a pdf which should take a picture of all your buses and describe it by giving details.</p>
+    </div>
+    <div class="upload-button">
+      <label for="bus-pdf-upload">Upload PDF</label>
+      <input type="file" id="bus-pdf-upload" accept=".pdf">
+    </div>
+  </div>
+
+  <div class="home-button">
+    <a href="/home-owner">Submit</a>
+  </div>
+
+  <script>
+    const carPdfUpload = document.getElementById('car-pdf-upload');
+    const bikePdfUpload = document.getElementById('bike-pdf-upload');
+    const busPdfUpload = document.getElementById('bus-pdf-upload');
+
+    carPdfUpload.addEventListener('change', handlePdfUpload);
+    bikePdfUpload.addEventListener('change', handlePdfUpload);
+    busPdfUpload.addEventListener('change', handlePdfUpload);
+
+    function handlePdfUpload(event) {
+      const file = event.target.files[0];
+      const fileName = file.name;
+      alert('You uploaded a PDF file: ' + fileName);
+    }
+  </script>
+</body>
+{% endblock body %}

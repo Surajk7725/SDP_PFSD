@@ -76,3 +76,9 @@ body{
 .contact-table th {
     background-color: #f2f2f2;
 }
+
+.form-control {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+}

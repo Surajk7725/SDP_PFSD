@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base1.html' %}
 {% load static %}
 
 {% block title %}
@@ -18,17 +18,17 @@
             </tr>
         </thead>
         <tbody>
-            {% for contact in contacts %}
+            {% for contact1 in contactsus %}
             <tr>
-                <td style="border: 1px solid black; padding: 8px;">{{ contact.name }}</td>
-                <td style="border: 1px solid black; padding: 8px;">{{ contact.email }}</td>
-                <td style="border: 1px solid black; padding: 8px;">{{ contact.phone_number }}</td>
-                <td style="border: 1px solid black; padding: 8px;">{{ contact.message }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ contact1.name }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ contact1.email }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ contact1.phone_number }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ contact1.message }}</td>
                 <td style="border: 1px solid black; padding: 8px;">
-                    <a href="https://wa.me/{{ contact.phone_number }}" target="_blank">
+                    <a href="https://wa.me/{{ contact1.phone_number }}" target="_blank">
                         <button style="padding: 5px 10px;">WhatsApp</button>
                     </a>
-                    <a href="mailto:{{ contact.email }}">
+                    <a href="mailto:{{ contact1.email }}">
                         <button style="padding: 5px 10px;">Email</button>
                     </a>
                 </td>

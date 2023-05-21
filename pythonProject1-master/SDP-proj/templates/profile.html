@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+{% block body %}
+
+<section class="h-100 bg-dark">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card card-profile my-4">
+                    <div class="card-body p-md-5 text-black">
+                        <h3 class="mb-5 text-uppercase">User Profile</h3>
+                        <div class="profile-details">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Username:</label>
+                                    <p>{{ user.username }}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Email:</label>
+                                    <p>{{ user.email }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .card-profile {
+        border: none;
+    }
+
+    .card-profile .card-body {
+        padding: 40px;
+    }
+
+    .profile-details label {
+        font-weight: bold;
+        color: #555555;
+    }
+
+    .profile-details p {
+        margin-bottom: 1rem;
+    }
+
+    #edit-button {
+        width: 100px;
+    }
+</style>
+
+{% endblock body %}

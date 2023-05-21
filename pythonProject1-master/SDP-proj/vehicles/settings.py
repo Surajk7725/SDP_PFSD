@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'MyApp.apps.MyappConfig',
 ]
 
+
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -148,3 +151,6 @@ EMAIL_USE_TLS=True
 EMAIL_PORT=587
 EMAIL_HOST_USER='surajkumar.sk.pika.0807@gmail.com'
 EMAIL_HOST_PASSWORD='fenvjrqwamesqusc'
+
+# settings.py
+

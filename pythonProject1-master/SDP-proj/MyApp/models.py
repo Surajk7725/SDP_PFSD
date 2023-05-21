@@ -1,5 +1,23 @@
-from email.policy import default
 from django.db import models
+
+
+class Ownerl(models.Model):
+    username = models.CharField(max_length=150, unique=True)
+    password = models.CharField(max_length=128)
+
+    def __str__(self):
+        return self.username
+
+class Ownerr(models.Model):
+    name = models.CharField(max_length=100)
+    username = models.CharField(max_length=100)
+    number = models.CharField(max_length=15)
+    email = models.EmailField(max_length=254)
+    password = models.CharField(max_length=100)
+    password2 = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
 class Car(models.Model):
@@ -34,6 +52,15 @@ class Order(models.Model):
 
 
 class Contact(models.Model):
+    message = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=150, default="")
+    email = models.CharField(max_length=150, default="")
+    phone_number = models.CharField(max_length=15, default="")
+    message = models.TextField(max_length=500, default="")
+    def __str__(self):
+        return self.name
+
+class ContactUs(models.Model):
     message = models.AutoField(primary_key=True)
     name = models.CharField(max_length=150, default="")
     email = models.CharField(max_length=150, default="")
@@ -101,5 +128,43 @@ class OrderBus(models.Model):
 
     def __str__(self):
         return self.name
+
+class VehicleShop(models.Model):
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=20)
+    email = models.EmailField()
+    address = models.CharField(max_length=200)
+    business_na = models.CharField(max_length=100)
+    business_address = models.CharField(max_length=200)
+    business_ph = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
+class Payment(models.Model):
+    cardno = models.CharField(max_length=16)
+    month = models.CharField(max_length=7)
+    number = models.CharField(max_length=10)
+    cvc = models.CharField(max_length=4)
+    name = models.CharField(max_length=255)
+    bill = models.DecimalField(max_digits=10, decimal_places=2)
+
+class OwnerDocuments(models.Model):
+    aadhar_card = models.FileField(upload_to='ownerdocs/')
+    pan_card = models.FileField(upload_to='ownerdocs/')
+    business_license = models.FileField(upload_to='ownerdocs/')
+    vehicle_proof_documents = models.FileField(upload_to='ownerdocs/')
+    vehicle_insurance_documents = models.FileField(upload_to='ownerdocs/')
+
+class BankDetails(models.Model):
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=20)
+    bank_name = models.CharField(max_length=100)
+    branch_name = models.CharField(max_length=100)
+    account_number = models.CharField(max_length=20)
+    ifsc_code = models.CharField(max_length=20)
+
+
+
 
 

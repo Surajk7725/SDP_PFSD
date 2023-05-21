@@ -1,0 +1,77 @@
+{% extends 'base1.html' %}
+
+{%load static%}
+<link rel="stylesheet" href="{%static 'style.css'%}">
+<style>
+	.form-control {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+</style>
+
+{% block body %}
+
+<section class="h-100 bg-dark">
+	<div class="container py-5 h-100">
+	  <div class="row d-flex justify-content-center align-items-center h-100">
+		<div class="col">
+		  <div class="card card-registration my-4">
+			<div class="row g-0">
+			  <div class="col-xl-6 d-none d-xl-block">
+				<img src="https://assets-global.website-files.com/5aa7081220a301f2a3644f3b/5f8f655249aea2deb7b1a42e_business_documents.jpg"
+				  alt="Sample photo" class="img-fluid"
+				  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+			  </div>
+			  <div class="col-xl-6">
+				<div class="card-body p-md-5 text-black">
+				  <h3 class="mb-5 text-uppercase">Upload Documents</h3>
+
+
+   <form method="post"  action="{% url 'docs' %}">
+	{% csrf_token %}
+	<div class="form-group">
+		<label for="aadhar-card" class="form-label">Aadhaar Card</label>
+        <input type="file" class="form-control" id="aadhar-card" name="aadhar-card">
+	  </div>
+	  <div class="form-group">
+		<label for="pan-card" class="form-label">PAN Card</label>
+      <input type="file" class="form-control" id="pan-card" name="pan-card">
+	  </div>
+	<div class="form-group">
+
+		<div class="form-group">
+	  <label for="business-license" class="form-label">Business License</label>
+      <input type="file" class="form-control" id="business-license" name="business-license">
+	</div>
+	<div class="form-group">
+	  <label for="vehicle-proof-documents" class="form-label">Vehicle Registration Documents</label>
+        <input type="file" class="form-control" id="vehicle-proof-documents" name="vehicle-proof-documents">
+	</div>
+		<div class="form-group">
+		<label for="vehicle-vin-documents" class="form-label">Vehicle VIN Documents</label>
+      <input type="file" class="form-control" id="vehicle-vin-documents" name="vehicle-vin-documents">
+	  </div>
+	<div class="form-group">
+		<label for="vehicle-insurance-documents" class="form-label">Vehicle Insurance Documents</label>
+      <input type="file" class="form-control" id="vehicle-insurance-documents" name="vehicle-insurance-documents">
+	  </div>
+
+	{% comment %} <button type="submit" class="btn btn-primary">Submit</button> {% endcomment %}
+
+				  <div class="d-flex justify-content-end pt-3">
+					{% comment %} <button type="button" class="btn btn-warning btn-lg ms-2" href="/bank-details">Submit form</button> {% endcomment %}
+					<button type="submit" class="btn btn-warning btn-lg ms-2">Submit</button>
+				  </div>
+				</form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+
+
+{% endblock body %}

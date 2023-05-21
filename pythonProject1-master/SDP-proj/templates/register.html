@@ -22,8 +22,8 @@
 				  <h3 class="mb-5 text-uppercase">Sign Up</h3>
   
 				  
-   <form method="post"  action="\register">
-	{% csrf_token %}
+   <form method="post"  action="/register">
+	{%  csrf_token  %}
 	<div class="form-group">
 		<label for="name">Name</label>
 		<input type="text" class="form-control" id="name" placeholder="Name" name='name'>
