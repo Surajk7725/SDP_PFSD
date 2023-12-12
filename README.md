@@ -99,4 +99,4 @@ The Rental System Project is accessible online at the following link: [http://sk
 
 1. Open your web browser and navigate to [http://sk7ayanokoji.pythonanywhere.com/](http://sk7ayanokoji.pythonanywhere.com/).
 
-2. Explore the main application to browse and rent items as per your requirements.
+2. Explore the main application to browse and rent vehicles as per your requirements.
