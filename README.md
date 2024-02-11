@@ -95,7 +95,7 @@ This project, the Rental System, has been successfully deployed on [PythonAnywhe
 
 The Rental System Project is accessible online at the following link: [http://sk7ayanokoji.pythonanywhere.com/](http://sk7ayanokoji.pythonanywhere.com/)
 
-### Instructions for Accessing the Deployed Project:
+### Instructions for Accessing the Deployed Project:-
 
 1. Open your web browser and navigate to [http://sk7ayanokoji.pythonanywhere.com/](http://sk7ayanokoji.pythonanywhere.com/).
 
